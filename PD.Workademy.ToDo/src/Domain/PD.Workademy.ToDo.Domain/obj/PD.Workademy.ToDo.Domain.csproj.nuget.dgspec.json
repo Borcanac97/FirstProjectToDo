@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\ndjokic\\Desktop\\FirstProject\\PD.Workademy.ToDo\\src\\Domain\\PD.Workademy.ToDo.Domain\\PD.Workademy.ToDo.Domain.csproj": {}
+    "C:\\Users\\ndjokic\\Desktop\\FIRST_PROJECT\\FirstProjectToDo\\PD.Workademy.ToDo\\src\\Domain\\PD.Workademy.ToDo.Domain\\PD.Workademy.ToDo.Domain.csproj": {}
   },
   "projects": {
-    "C:\\Users\\ndjokic\\Desktop\\FirstProject\\PD.Workademy.ToDo\\src\\Domain\\PD.Workademy.ToDo.Domain\\PD.Workademy.ToDo.Domain.csproj": {
+    "C:\\Users\\ndjokic\\Desktop\\FIRST_PROJECT\\FirstProjectToDo\\PD.Workademy.ToDo\\src\\Domain\\PD.Workademy.ToDo.Domain\\PD.Workademy.ToDo.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ndjokic\\Desktop\\FirstProject\\PD.Workademy.ToDo\\src\\Domain\\PD.Workademy.ToDo.Domain\\PD.Workademy.ToDo.Domain.csproj",
+        "projectUniqueName": "C:\\Users\\ndjokic\\Desktop\\FIRST_PROJECT\\FirstProjectToDo\\PD.Workademy.ToDo\\src\\Domain\\PD.Workademy.ToDo.Domain\\PD.Workademy.ToDo.Domain.csproj",
         "projectName": "PD.Workademy.ToDo.Domain",
-        "projectPath": "C:\\Users\\ndjokic\\Desktop\\FirstProject\\PD.Workademy.ToDo\\src\\Domain\\PD.Workademy.ToDo.Domain\\PD.Workademy.ToDo.Domain.csproj",
+        "projectPath": "C:\\Users\\ndjokic\\Desktop\\FIRST_PROJECT\\FirstProjectToDo\\PD.Workademy.ToDo\\src\\Domain\\PD.Workademy.ToDo.Domain\\PD.Workademy.ToDo.Domain.csproj",
         "packagesPath": "C:\\Users\\ndjokic\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ndjokic\\Desktop\\FirstProject\\PD.Workademy.ToDo\\src\\Domain\\PD.Workademy.ToDo.Domain\\obj\\",
+        "outputPath": "C:\\Users\\ndjokic\\Desktop\\FIRST_PROJECT\\FirstProjectToDo\\PD.Workademy.ToDo\\src\\Domain\\PD.Workademy.ToDo.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

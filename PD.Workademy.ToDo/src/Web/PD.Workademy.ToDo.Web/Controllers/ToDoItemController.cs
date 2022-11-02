@@ -1,18 +1,34 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using PD.Workademy.ToDo.Application.IServices;
+using PD.Workademy.ToDo.Application.Services;
 using PD.Workademy.ToDo.Web.ApiModels;
 using System;
 
 namespace PD.Workademy.ToDo.Web.Controllers
 {
-    [ApiController]
-    [Route("api/[controller]")]
     public class ToDoItemController : ApiBaseController
     {
+        private readonly IToDoItemService _toDoItemService;
+
+        public ToDoItemController(IToDoItemService toDoItemService)
+        {
+           _toDoItemService=toDoItemService;
+        }
+
+        [HttpGet("/ToDos")]
+        public async Task<ActionResult> GetToDoItemsAsync()
+        { 
+            var toDos = _toDoItemService.GetItems().Select(todo => new ToDoItemDTO(todo.Id, todo.Title, todo.Description, todo.IsDone,
+                 new CategoryDTO(todo.Category.Id, todo.Category.Name), new UserDTO(todo.User.Id, todo.User.FirstName, todo.User.LastName)));
+            
+            return Ok(toDos);
+        }
+
         [HttpGet]
         public async Task<ActionResult> GetToDoItemsAsync(Guid id)
         {
-            ToDoItemDTO _toDoItemDTO =
+            ToDoItemDTO toDoItemDTO =
             new(
                     id,
                     "Learn .NET",
@@ -25,13 +41,13 @@ namespace PD.Workademy.ToDo.Web.Controllers
                         "Djokic"
                     )
                 );
-            return Ok(_toDoItemDTO);
+            return Ok(toDoItemDTO);
         }
 
         [HttpPost]
-        public async Task<ActionResult> AddToDoItemAsync([FromBody]ToDoItemDTO _addToDoItemDTO)
+        public async Task<ActionResult> AddToDoItemAsync([FromBody]ToDoItemDTO addToDoItemDTO)
         {
-            List<ToDoItemDTO> _toDoItemDTO = new()
+            List<ToDoItemDTO> toDoItemDTO = new()
             {
                 new ToDoItemDTO(new Guid("1beae11c-75a4-4c87-84a8-f3926cf1aa99"),"Create MSSQL","It`s Easy", true,
                                 new CategoryDTO(new Guid("1beae11c-75a4-4c87-84a8-f3926cf1aa99"), "Easy"),
@@ -46,14 +62,14 @@ namespace PD.Workademy.ToDo.Web.Controllers
                                 new UserDTO( new Guid("0e6cead0-5a12-41bd-8946-0cea43724b3c"),"Matija","Davidovic")
                                 )
             };
-            _toDoItemDTO.Add(_addToDoItemDTO);
-            return Ok(_toDoItemDTO);
+            toDoItemDTO.Add(addToDoItemDTO);
+            return Ok(toDoItemDTO);
         }
 
         [HttpPut]
-        public async Task<ActionResult> UpdateToDoItemAsync(Guid id,ToDoItemDTO _updateToDoItem)
+        public async Task<ActionResult> UpdateToDoItemAsync(Guid id,ToDoItemDTO updateToDoItem)
         {
-            List<ToDoItemDTO> _toDoItemDTOs = new()
+            List<ToDoItemDTO> toDoItemDTOs = new()
             {   
                 new ToDoItemDTO(
                     new Guid("1beae11c-75a4-4c87-84a8-f3926cf1aa99"),"Create MSSQL","It`s Easy", true,
@@ -72,19 +88,19 @@ namespace PD.Workademy.ToDo.Web.Controllers
                                 )
                 
             };
-            ToDoItemDTO _toDoItemDTO = _toDoItemDTOs.Find(x => x.Id == id);
-            _toDoItemDTO.Id = _updateToDoItem.Id;
-            _toDoItemDTO.Title=_updateToDoItem.Title;
-            _toDoItemDTO.Description=_updateToDoItem.Description;
-            _toDoItemDTO.Category = _updateToDoItem.Category;
-            _toDoItemDTO.User = _updateToDoItem.User;
-            return Ok(_toDoItemDTO);
+            ToDoItemDTO toDoItemDTO = toDoItemDTOs.Find(x => x.Id == id);
+            toDoItemDTO.Id = updateToDoItem.Id;
+            toDoItemDTO.Title=updateToDoItem.Title;
+            toDoItemDTO.Description=updateToDoItem.Description;
+            toDoItemDTO.Category = updateToDoItem.Category;
+            toDoItemDTO.User = updateToDoItem.User;
+            return Ok(toDoItemDTO);
         }
 
         [HttpDelete]
         public async Task<ActionResult> RemoveToDoItemsAsync(Guid id)
         {
-            List<ToDoItemDTO> _toDoItemDTOs = new()
+            List<ToDoItemDTO> toDoItemDTOs = new()
             {
                 new ToDoItemDTO(
                     new Guid("1beae11c-75a4-4c87-84a8-f3926cf1aa99"),"Create MSSQL","It`s Easy", true,
@@ -103,9 +119,9 @@ namespace PD.Workademy.ToDo.Web.Controllers
                                 )
 
             };
-            ToDoItemDTO _DeleteToDoItem = _toDoItemDTOs.Find(x => x.Id == id);
-            _toDoItemDTOs.Remove(_DeleteToDoItem);
-            return Ok(_toDoItemDTOs);
+            ToDoItemDTO deleteToDoItem = toDoItemDTOs.Find(x => x.Id == id);
+            toDoItemDTOs.Remove(deleteToDoItem);
+            return Ok(toDoItemDTOs);
         }
 
     }

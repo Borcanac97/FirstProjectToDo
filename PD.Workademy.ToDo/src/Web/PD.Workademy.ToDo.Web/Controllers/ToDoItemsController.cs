@@ -4,14 +4,13 @@ using PD.Workademy.ToDo.Web.ApiModels;
 
 namespace PD.Workademy.ToDo.Web.Controllers
 {
-    [ApiController]
     public class ToDoItemsController : ApiBaseController
     {
        
         [HttpGet]
         public async Task<ActionResult> GetAllToDoItemsAsync()
         {
-            List<ToDoItemDTO> _toDoItemDTO = new()
+            List<ToDoItemDTO> toDoItemDTO = new()
             {
                 new ToDoItemDTO(new Guid("1beae11c-75a4-4c87-84a8-f3926cf1aa99"),"Create MSSQL","It`s Easy", true,
                                 new CategoryDTO(new Guid("1beae11c-75a4-4c87-84a8-f3926cf1aa99"), "Easy"),
@@ -26,7 +25,7 @@ namespace PD.Workademy.ToDo.Web.Controllers
                                 new UserDTO( new Guid("0e6cead0-5a12-41bd-8946-0cea43724b3c"),"Matija","Davidovic")
                                 )
             };
-            return Ok(_toDoItemDTO);
+            return Ok(toDoItemDTO);
         }
 
         

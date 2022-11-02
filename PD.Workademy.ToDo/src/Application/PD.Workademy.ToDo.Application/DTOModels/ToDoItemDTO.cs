@@ -2,6 +2,9 @@
 {
     public class ToDoItemDTO
     {
+        private UserDTO userDTO;
+        private CategoryDTO categoryDTO;
+
         public Guid Id { get; set; }
         
         public string Title { get; set; }   
@@ -25,6 +28,6 @@
             User = user;
         }
 
-
+       
     }
 }

@@ -1,6 +1,10 @@
 using Microsoft.AspNetCore.Builder;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using PD.Workademy.ToDo.Application.IServices;
+using PD.Workademy.ToDo.Application.Services;
+using PD.Workademy.ToDo.Infrastructure.Persistance;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -11,7 +15,20 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-//builder.Services.AddTransient<IServiceToDo, ToDoService>();
+builder.Services.AddTransient<ICategoryService, CategoryService>();
+
+builder.Services.AddTransient<IUserService, UserService>();
+
+builder.Services.AddTransient<IToDoItemService,ToDoItemService>();
+
+
+
+
+
+builder.Services.AddDbContext<ApplicationDBContext>(options =>
+{
+    options.UseSqlServer(builder.Configuration.GetConnectionString("Todo"));
+});
 
 var app = builder.Build();
 

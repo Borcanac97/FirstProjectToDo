@@ -6,4 +6,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\Domain\PD.Workademy.ToDo.Domain\PD.Workademy.ToDo.Domain.csproj" />
+  </ItemGroup>
+
 </Project>

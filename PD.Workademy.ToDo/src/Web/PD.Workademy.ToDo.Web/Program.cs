@@ -4,7 +4,10 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using PD.Workademy.ToDo.Application.IServices;
 using PD.Workademy.ToDo.Application.Services;
+using PD.Workademy.ToDo.Domain.Entities;
+using PD.Workademy.ToDo.Domain.SharedKarnel.Interfaces.Repository;
 using PD.Workademy.ToDo.Infrastructure.Persistance;
+using PD.Workademy.ToDo.Infrastructure.Persistance.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -22,6 +25,9 @@ builder.Services.AddTransient<IUserService, UserService>();
 builder.Services.AddTransient<IToDoItemService,ToDoItemService>();
 
 
+builder.Services.AddTransient<ICategoryRepository, CategoryRepository>();
+/*
+builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();*/
 
 
 

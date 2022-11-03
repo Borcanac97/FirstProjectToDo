@@ -17,6 +17,8 @@ namespace PD.Workademy.ToDo.Domain.Entities
             Name = name;
         }
 
+        public ICollection<ToDoItem> toDoItems { get; set; }
+
 
 
     }

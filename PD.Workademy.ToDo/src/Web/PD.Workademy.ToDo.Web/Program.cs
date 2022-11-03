@@ -18,6 +18,11 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+builder.Services.AddDbContext<ApplicationDBContext>(options =>
+{
+    options.UseSqlServer(builder.Configuration.GetConnectionString("Todo"));
+});
+
 builder.Services.AddTransient<ICategoryService, CategoryService>();
 
 builder.Services.AddTransient<IUserService, UserService>();
@@ -26,14 +31,9 @@ builder.Services.AddTransient<IToDoItemService,ToDoItemService>();
 
 
 builder.Services.AddTransient<ICategoryRepository, CategoryRepository>();
+builder.Services.AddTransient<IUserRepository, UserRepository>();
 
 
-
-
-builder.Services.AddDbContext<ApplicationDBContext>(options =>
-{
-    options.UseSqlServer(builder.Configuration.GetConnectionString("Todo"));
-});
 
 var app = builder.Build();
 

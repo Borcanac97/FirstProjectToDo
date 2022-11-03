@@ -10,8 +10,6 @@ namespace PD.Workademy.ToDo.Domain.SharedKarnel.Interfaces.Repository
     public interface ICategoryRepository
     {
 
-        ICategoryRepository CategoryRepository { get; }
-
         IEnumerable<Category> GetCategories();
 
         Category GetCategoryById(Guid id);

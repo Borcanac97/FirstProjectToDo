@@ -26,8 +26,7 @@ builder.Services.AddTransient<IToDoItemService,ToDoItemService>();
 
 
 builder.Services.AddTransient<ICategoryRepository, CategoryRepository>();
-/*
-builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();*/
+
 
 
 

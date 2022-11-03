@@ -2044,8 +2044,7 @@
       "Microsoft.EntityFrameworkCore.Design >= 6.0.10",
       "Microsoft.EntityFrameworkCore.SqlServer >= 6.0.10",
       "Microsoft.EntityFrameworkCore.Tools >= 6.0.10",
-      "PD.Workademy.ToDo.Application >= 1.0.0",
-      "PD.Workademy.ToDo.Domain >= 1.0.0"
+      "PD.Workademy.ToDo.Application >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -2083,9 +2082,6 @@
           "projectReferences": {
             "C:\\Users\\ndjokic\\Desktop\\FIRST_PROJECT\\FirstProjectToDo\\PD.Workademy.ToDo\\src\\Application\\PD.Workademy.ToDo.Application\\PD.Workademy.ToDo.Application.csproj": {
               "projectPath": "C:\\Users\\ndjokic\\Desktop\\FIRST_PROJECT\\FirstProjectToDo\\PD.Workademy.ToDo\\src\\Application\\PD.Workademy.ToDo.Application\\PD.Workademy.ToDo.Application.csproj"
-            },
-            "C:\\Users\\ndjokic\\Desktop\\FIRST_PROJECT\\FirstProjectToDo\\PD.Workademy.ToDo\\src\\Domain\\PD.Workademy.ToDo.Domain\\PD.Workademy.ToDo.Domain.csproj": {
-              "projectPath": "C:\\Users\\ndjokic\\Desktop\\FIRST_PROJECT\\FirstProjectToDo\\PD.Workademy.ToDo\\src\\Domain\\PD.Workademy.ToDo.Domain\\PD.Workademy.ToDo.Domain.csproj"
             }
           }
         }

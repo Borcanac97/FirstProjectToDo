@@ -1,10 +1,6 @@
-using Microsoft.AspNetCore.Builder;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
 using PD.Workademy.ToDo.Application.IServices;
 using PD.Workademy.ToDo.Application.Services;
-using PD.Workademy.ToDo.Domain.Entities;
 using PD.Workademy.ToDo.Domain.SharedKarnel.Interfaces.Repository;
 using PD.Workademy.ToDo.Infrastructure.Persistance;
 using PD.Workademy.ToDo.Infrastructure.Persistance.Repositories;
@@ -23,15 +19,15 @@ builder.Services.AddDbContext<ApplicationDBContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("Todo"));
 });
 
+
 builder.Services.AddTransient<ICategoryService, CategoryService>();
-
 builder.Services.AddTransient<IUserService, UserService>();
-
-builder.Services.AddTransient<IToDoItemService,ToDoItemService>();
+builder.Services.AddTransient<IToDoItemService, ToDoItemService>();
 
 
 builder.Services.AddTransient<ICategoryRepository, CategoryRepository>();
 builder.Services.AddTransient<IUserRepository, UserRepository>();
+builder.Services.AddTransient<IToDoItemRepository, ToDoItemRepository>();
 
 
 

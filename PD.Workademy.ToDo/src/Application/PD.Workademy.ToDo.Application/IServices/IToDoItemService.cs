@@ -1,15 +1,13 @@
-﻿using PD.Workademy.ToDo.Domain.Entities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using PD.Workademy.ToDo.Web.ApiModels;
 
 namespace PD.Workademy.ToDo.Application.IServices
 {
     public interface IToDoItemService
     {
-        List<ToDoItem> GetItems();
-    
+        IEnumerable<ToDoItemDTO> GetToDoItems();
+        ToDoItemDTO GetToDoItemById(Guid id);
+        ToDoItemDTO UpdateToDoItem(ToDoItemDTO toDoItemDTO);
+        ToDoItemDTO DeleteToDoItem(Guid id);
+        ToDoItemDTO AddToDoItem(ToDoItemDTO toDoItemDTO);
     }
 }

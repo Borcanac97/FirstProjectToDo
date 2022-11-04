@@ -1,13 +1,8 @@
 ﻿using PD.Workademy.ToDo.Domain.SharedKarnel;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace PD.Workademy.ToDo.Domain.Entities
 {
-    public class ToDoItem :BaseEntity
+    public class ToDoItem : BaseEntity
     {
         public string? Title { get; set; }
 
@@ -19,6 +14,20 @@ namespace PD.Workademy.ToDo.Domain.Entities
 
         public User? User { get; set; }
 
-        
+        public ToDoItem(){}
+        public ToDoItem(Guid id, string? title, string? description, bool isDone, Category? category, User? user)
+        {
+            Id = id;
+            Title = title;
+            Description = description;
+            IsDone = isDone;
+            Category = category;
+            User = user;
+        }
+        public void ChangeStatus(bool isDone)
+        {
+            IsDone = isDone;
+           
+        }
     }
 }

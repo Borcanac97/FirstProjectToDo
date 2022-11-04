@@ -4,19 +4,13 @@
     {
         private UserDTO userDTO;
         private CategoryDTO categoryDTO;
-
         public Guid Id { get; set; }
-        
         public string Title { get; set; }   
-        
         public string? Description { get; set; }
-
         public bool IsDone { get; private set; }
-
         public  CategoryDTO Category { get; set; }
-
         public UserDTO User { get; set; }
-
+        public ToDoItemDTO(){}
         public ToDoItemDTO(Guid id, string title, string? description, 
                            bool isDone, CategoryDTO category, UserDTO user)
         {
@@ -27,7 +21,5 @@
             Category = category;
             User = user;
         }
-
-       
     }
 }

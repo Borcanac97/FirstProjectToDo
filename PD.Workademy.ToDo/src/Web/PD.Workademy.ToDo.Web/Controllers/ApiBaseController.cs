@@ -1,5 +1,4 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 
 namespace PD.Workademy.ToDo.Web.Controllers
 {
@@ -7,5 +6,6 @@ namespace PD.Workademy.ToDo.Web.Controllers
     [ApiController]
     public class ApiBaseController : ControllerBase
     {
+
     }
 }

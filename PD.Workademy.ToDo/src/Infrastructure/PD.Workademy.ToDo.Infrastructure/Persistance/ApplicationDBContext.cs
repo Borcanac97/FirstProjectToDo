@@ -17,6 +17,13 @@ namespace PD.Workademy.ToDo.Infrastructure.Persistance
         public DbSet<Category> Categories { get; set; }
 
 
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<ToDoItem>()
+                .HasOne(b => b.Category)
+                .WithMany(a => a.toDoItems)
+                .OnDelete(DeleteBehavior.Restrict);
+        }
 
     }
 }

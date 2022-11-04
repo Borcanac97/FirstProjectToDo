@@ -159,9 +159,6 @@
             "projectReferences": {
               "C:\\Users\\ndjokic\\Desktop\\FIRST_PROJECT\\FirstProjectToDo\\PD.Workademy.ToDo\\src\\Application\\PD.Workademy.ToDo.Application\\PD.Workademy.ToDo.Application.csproj": {
                 "projectPath": "C:\\Users\\ndjokic\\Desktop\\FIRST_PROJECT\\FirstProjectToDo\\PD.Workademy.ToDo\\src\\Application\\PD.Workademy.ToDo.Application\\PD.Workademy.ToDo.Application.csproj"
-              },
-              "C:\\Users\\ndjokic\\Desktop\\FIRST_PROJECT\\FirstProjectToDo\\PD.Workademy.ToDo\\src\\Domain\\PD.Workademy.ToDo.Domain\\PD.Workademy.ToDo.Domain.csproj": {
-                "projectPath": "C:\\Users\\ndjokic\\Desktop\\FIRST_PROJECT\\FirstProjectToDo\\PD.Workademy.ToDo\\src\\Domain\\PD.Workademy.ToDo.Domain\\PD.Workademy.ToDo.Domain.csproj"
               }
             }
           }

@@ -43,7 +43,7 @@ namespace PD.Workademy.ToDo.Infrastructure.Persistance.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<Guid>("CategoryId")
+                    b.Property<Guid?>("CategoryId")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Description")
@@ -53,20 +53,14 @@ namespace PD.Workademy.ToDo.Infrastructure.Persistance.Migrations
                         .HasColumnType("bit");
 
                     b.Property<string>("Title")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<Guid?>("ToDoItemId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<Guid>("UserId")
+                    b.Property<Guid?>("UserId")
                         .HasColumnType("uniqueidentifier");
 
                     b.HasKey("Id");
 
                     b.HasIndex("CategoryId");
-
-                    b.HasIndex("ToDoItemId");
 
                     b.HasIndex("UserId");
 
@@ -95,39 +89,16 @@ namespace PD.Workademy.ToDo.Infrastructure.Persistance.Migrations
             modelBuilder.Entity("PD.Workademy.ToDo.Domain.Entities.ToDoItem", b =>
                 {
                     b.HasOne("PD.Workademy.ToDo.Domain.Entities.Category", "Category")
-                        .WithMany("ToDoItems")
-                        .HasForeignKey("CategoryId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("PD.Workademy.ToDo.Domain.Entities.ToDoItem", null)
-                        .WithMany("ToDoItems")
-                        .HasForeignKey("ToDoItemId");
+                        .WithMany()
+                        .HasForeignKey("CategoryId");
 
                     b.HasOne("PD.Workademy.ToDo.Domain.Entities.User", "User")
-                        .WithMany("ToDoItems")
-                        .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .WithMany()
+                        .HasForeignKey("UserId");
 
                     b.Navigation("Category");
 
                     b.Navigation("User");
-                });
-
-            modelBuilder.Entity("PD.Workademy.ToDo.Domain.Entities.Category", b =>
-                {
-                    b.Navigation("ToDoItems");
-                });
-
-            modelBuilder.Entity("PD.Workademy.ToDo.Domain.Entities.ToDoItem", b =>
-                {
-                    b.Navigation("ToDoItems");
-                });
-
-            modelBuilder.Entity("PD.Workademy.ToDo.Domain.Entities.User", b =>
-                {
-                    b.Navigation("ToDoItems");
                 });
 #pragma warning restore 612, 618
         }

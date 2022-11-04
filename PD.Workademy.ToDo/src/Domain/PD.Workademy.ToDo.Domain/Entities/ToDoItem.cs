@@ -19,19 +19,6 @@ namespace PD.Workademy.ToDo.Domain.Entities
 
         public User? User { get; set; }
 
-
-        public ToDoItem(Guid id, string title,string description,bool isDone, Category category,User user)
-        {
-            Id = id;
-            Title = title;
-            Description = description;
-            IsDone = isDone;
-           Category = category;
-            User = user;
-           
-        }
-
-
-
+        
     }
 }

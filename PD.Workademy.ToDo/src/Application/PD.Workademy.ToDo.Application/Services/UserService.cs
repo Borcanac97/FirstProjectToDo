@@ -2,11 +2,6 @@
 using PD.Workademy.ToDo.Domain.Entities;
 using PD.Workademy.ToDo.Domain.SharedKarnel.Interfaces.Repository;
 using PD.Workademy.ToDo.Web.ApiModels;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace PD.Workademy.ToDo.Application.Services
 {
@@ -21,7 +16,7 @@ namespace PD.Workademy.ToDo.Application.Services
 
         public UserDTO AddUser(UserDTO userDTO)
         {
-            User user = new User(userDTO.Id,userDTO.FirstName,userDTO.LastName);
+            User user = new User(userDTO.Id, userDTO.FirstName, userDTO.LastName);
 
             User savedUser = _userRepository.AddUser(user);
 
@@ -45,7 +40,7 @@ namespace PD.Workademy.ToDo.Application.Services
 
         public IEnumerable<UserDTO> GetUsers()
         {
-            var user= _userRepository.GetUsers();
+            var user = _userRepository.GetUsers();
             return user.Select(x => new UserDTO(x.Id, x.FirstName, x.LastName));
         }
 
@@ -53,7 +48,7 @@ namespace PD.Workademy.ToDo.Application.Services
         {
             User userUpdate = new(userDTO.Id, userDTO.FirstName, userDTO.LastName);
             _userRepository.UpdateUser(id, userUpdate);
-            UserDTO user=new(userDTO.Id,userDTO.FirstName, userDTO.LastName);
+            UserDTO user = new(userDTO.Id, userDTO.FirstName, userDTO.LastName);
             return user;
         }
     }

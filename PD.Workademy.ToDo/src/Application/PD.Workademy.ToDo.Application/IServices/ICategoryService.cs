@@ -1,6 +1,4 @@
-﻿using PD.Workademy.ToDo.Domain.Entities;
-using PD.Workademy.ToDo.Domain.SharedKarnel.Interfaces.Repository;
-using PD.Workademy.ToDo.Web.ApiModels;
+﻿using PD.Workademy.ToDo.Web.ApiModels;
 
 namespace PD.Workademy.ToDo.Application.IServices
 {
@@ -16,6 +14,6 @@ namespace PD.Workademy.ToDo.Application.IServices
         CategoryDTO DeleteCategory(Guid id);
 
         CategoryDTO AddCategory(CategoryDTO category);
-        
+
     }
 }

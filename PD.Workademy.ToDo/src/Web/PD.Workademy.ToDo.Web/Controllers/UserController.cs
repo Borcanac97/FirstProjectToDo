@@ -1,7 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using PD.Workademy.ToDo.Application.IServices;
-using PD.Workademy.ToDo.Application.Services;
 using PD.Workademy.ToDo.Web.ApiModels;
 
 namespace PD.Workademy.ToDo.Web.Controllers
@@ -11,14 +9,9 @@ namespace PD.Workademy.ToDo.Web.Controllers
         private readonly IUserService _userService;
         public UserController(IUserService userService)
         {
-            _userService=userService;
+            _userService = userService;
         }
 
-        [HttpGet("/Users")]
-        public async Task<ActionResult> GetUsersAsync()
-        {
-            return Ok(_userService.GetUsers());
-        }
 
 
         [HttpGet]
@@ -35,15 +28,15 @@ namespace PD.Workademy.ToDo.Web.Controllers
 
 
         [HttpPut]
-        public async Task<ActionResult> UpdateUserAsync(Guid id,UserDTO updateUser)
+        public async Task<ActionResult> UpdateUserAsync(Guid id, UserDTO updateUser)
         {
-            return Ok(_userService.UpdateUser(id,updateUser));
+            return Ok(_userService.UpdateUser(id, updateUser));
         }
 
         [HttpDelete]
         public async Task<ActionResult> RemoveUsersAsync(Guid id)
         {
-           return Ok(_userService.DeleteUser(id));
+            return Ok(_userService.DeleteUser(id));
         }
 
 

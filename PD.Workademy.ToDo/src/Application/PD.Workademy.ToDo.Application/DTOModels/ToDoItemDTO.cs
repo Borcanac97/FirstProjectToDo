@@ -16,7 +16,10 @@
         public  CategoryDTO Category { get; set; }
 
         public UserDTO User { get; set; }
+        public ToDoItemDTO()
+        {
 
+        }
         public ToDoItemDTO(Guid id, string title, string? description, 
                            bool isDone, CategoryDTO category, UserDTO user)
         {

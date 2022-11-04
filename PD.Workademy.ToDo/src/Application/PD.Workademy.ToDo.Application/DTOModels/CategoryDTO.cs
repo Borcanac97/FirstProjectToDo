@@ -6,7 +6,10 @@
 
         public string Name { get; set; }
 
-
+        public CategoryDTO()
+        {
+                
+        }
         public CategoryDTO(Guid id, string name)
         {
             Id = id;

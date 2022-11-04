@@ -1,14 +1,7 @@
-﻿using Microsoft.VisualBasic;
-using PD.Workademy.ToDo.Application.IServices;
+﻿using PD.Workademy.ToDo.Application.IServices;
 using PD.Workademy.ToDo.Domain.Entities;
 using PD.Workademy.ToDo.Domain.SharedKarnel.Interfaces.Repository;
 using PD.Workademy.ToDo.Web.ApiModels;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Security.Cryptography.X509Certificates;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace PD.Workademy.ToDo.Application.Services
 {
@@ -16,7 +9,7 @@ namespace PD.Workademy.ToDo.Application.Services
 
     public class CategoryService : ICategoryService
     {
-       
+
         private readonly ICategoryRepository _categoryRepository;
 
         public CategoryService(ICategoryRepository categoryRepository)
@@ -31,9 +24,9 @@ namespace PD.Workademy.ToDo.Application.Services
             Category savedCategory = _categoryRepository.AddCategory(category);
 
             CategoryDTO _categoryDTO = new CategoryDTO(savedCategory.Id, savedCategory.Name);
-            
+
             return _categoryDTO;
-         
+
         }
 
         public CategoryDTO DeleteCategory(Guid id)
@@ -60,7 +53,7 @@ namespace PD.Workademy.ToDo.Application.Services
         {
             Category categoryUpdate = new(category.Id, category.Name);
             _categoryRepository.UpdateCategory(id, categoryUpdate);
-            CategoryDTO categoryDTO= new(category.Id, category.Name);
+            CategoryDTO categoryDTO = new(category.Id, category.Name);
             return categoryDTO;
         }
     }

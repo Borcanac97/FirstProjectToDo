@@ -1,12 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using PD.Workademy.ToDo.Domain.Entities;
 using PD.Workademy.ToDo.Domain.SharedKarnel.Interfaces.Repository;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Security.Cryptography.X509Certificates;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace PD.Workademy.ToDo.Infrastructure.Persistance.Repositories
 {
@@ -17,40 +11,40 @@ namespace PD.Workademy.ToDo.Infrastructure.Persistance.Repositories
         {
             _dbContext = dbContext;
         }
-
         public ToDoItem AddToDoItem(ToDoItem toDoItem)
         {
             _dbContext.Add(toDoItem);
             _dbContext.SaveChanges();
-            return _dbContext.ToDoItems.FirstOrDefault(x => x.Id == toDoItem.Id);
+            return _dbContext.ToDoItems
+                            .FirstOrDefault(x => x.Id == toDoItem.Id);
         }
-
         public ToDoItem DeleteToDoItem(Guid id)
         {
-            ToDoItem toDoItem= _dbContext.ToDoItems.Include(x=>x.Category).Include(x=>x.User).FirstOrDefault(x=>x.Id==id);
+            ToDoItem toDoItem = _dbContext.ToDoItems
+                        .Include(x => x.Category).Include(x => x.User)
+                        .FirstOrDefault(x => x.Id == id);
             _dbContext.Remove(toDoItem);
             _dbContext.SaveChanges();
             return toDoItem;
         }
-
         public IEnumerable<ToDoItem> GetToDoItems()
         {
             _dbContext.SaveChanges();
             return _dbContext.ToDoItems
                 .Include(x => x.Category)
-                .Include(x=>x.User);
+                .Include(x => x.User);
         }
-
         public ToDoItem GetToDoItemById(Guid id)
         {
             _dbContext.SaveChanges();
-            return _dbContext.ToDoItems.Include(x=>x.Category).Include(x=>x.User).FirstOrDefault(x => x.Id == id);
+            return _dbContext.ToDoItems.Include(x => x.Category)
+                                       .Include(x => x.User)
+                                       .FirstOrDefault(x => x.Id == id);
         }
-
-
         public ToDoItem UpdateToDoItem(ToDoItem toDoItem)
         {
-            var toDoItemUpdate = _dbContext.ToDoItems.FirstOrDefault(x => x.Id == toDoItem.Id);
+            var toDoItemUpdate = _dbContext.ToDoItems
+                                .FirstOrDefault(x => x.Id == toDoItem.Id);
             toDoItemUpdate.Title = toDoItem.Title;
             toDoItemUpdate.Description = toDoItem.Description;
             toDoItemUpdate.ChangeStatus(toDoItem.IsDone);
@@ -58,7 +52,6 @@ namespace PD.Workademy.ToDo.Infrastructure.Persistance.Repositories
             toDoItemUpdate.Category = toDoItem.Category;
             _dbContext.SaveChanges();
             return toDoItemUpdate;
-
         }
     }
 }

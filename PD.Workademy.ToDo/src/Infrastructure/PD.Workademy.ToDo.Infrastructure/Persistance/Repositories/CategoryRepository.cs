@@ -11,38 +11,35 @@ namespace PD.Workademy.ToDo.Infrastructure.Persistance.Repositories
         {
             _dbContext = dBContext;
         }
-
         public Category AddCategory(Category category)
         {
             _dbContext.Categories.Add(category);
             _dbContext.SaveChanges();
-            return _dbContext.Categories.FirstOrDefault(x => x.Id == category.Id);
+            return _dbContext.Categories
+                               .FirstOrDefault(x => x.Id == category.Id);
         }
-
         public Category DeleteCategory(Guid id)
         {
-
-            Category category = _dbContext.Categories.FirstOrDefault(x => x.Id == id);
+            Category category = _dbContext.Categories
+                                        .FirstOrDefault(x => x.Id == id);
             _dbContext.Categories.Remove(category);
             _dbContext.SaveChanges();
             return category;
         }
-
         public IEnumerable<Category> GetCategories()
         {
             _dbContext.SaveChanges();
             return _dbContext.Categories;
         }
-
         public Category GetCategoryById(Guid id)
         {
             _dbContext.SaveChanges();
             return _dbContext.Categories.FirstOrDefault(x => x.Id == id);
         }
-
         public Category UpdateCategory(Category category)
         {
-            var categoryUpdate = _dbContext.Categories.FirstOrDefault(x => x.Id == category.Id);
+            var categoryUpdate = _dbContext.Categories
+                            .FirstOrDefault(x => x.Id == category.Id);
             categoryUpdate.Id = category.Id;
             categoryUpdate.Name = category.Name;
             _dbContext.SaveChanges();

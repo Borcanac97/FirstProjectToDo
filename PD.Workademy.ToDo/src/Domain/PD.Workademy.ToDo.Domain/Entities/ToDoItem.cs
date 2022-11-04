@@ -14,10 +14,7 @@ namespace PD.Workademy.ToDo.Domain.Entities
 
         public User? User { get; set; }
 
-        public ToDoItem()
-        {
-
-        }
+        public ToDoItem(){}
         public ToDoItem(Guid id, string? title, string? description, bool isDone, Category? category, User? user)
         {
             Id = id;
@@ -27,12 +24,10 @@ namespace PD.Workademy.ToDo.Domain.Entities
             Category = category;
             User = user;
         }
-
         public void ChangeStatus(bool isDone)
         {
             IsDone = isDone;
            
         }
-
     }
 }

@@ -19,10 +19,9 @@ builder.Services.AddDbContext<ApplicationDBContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("Todo"));
 });
 
+
 builder.Services.AddTransient<ICategoryService, CategoryService>();
-
 builder.Services.AddTransient<IUserService, UserService>();
-
 builder.Services.AddTransient<IToDoItemService, ToDoItemService>();
 
 

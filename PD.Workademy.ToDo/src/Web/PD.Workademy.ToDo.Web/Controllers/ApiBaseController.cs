@@ -6,5 +6,6 @@ namespace PD.Workademy.ToDo.Web.Controllers
     [ApiController]
     public class ApiBaseController : ControllerBase
     {
+
     }
 }

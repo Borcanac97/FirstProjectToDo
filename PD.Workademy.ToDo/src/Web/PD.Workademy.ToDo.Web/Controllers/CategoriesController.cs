@@ -14,15 +14,10 @@ namespace PD.Workademy.ToDo.Web.Controllers
             _categoryService = categoryService;
         }
 
-
         [HttpGet]
         public async Task<ActionResult> GetCategoresAsync()
         {
-
             return Ok(_categoryService.GetCategories());
-
         }
-
-
     }
 }

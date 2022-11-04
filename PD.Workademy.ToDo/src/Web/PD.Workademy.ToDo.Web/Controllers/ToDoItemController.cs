@@ -7,12 +7,10 @@ namespace PD.Workademy.ToDo.Web.Controllers
     public class ToDoItemController : ApiBaseController
     {
         private readonly IToDoItemService _toDoItemService;
-
         public ToDoItemController(IToDoItemService toDoItemService)
         {
             _toDoItemService = toDoItemService;
         }
-
 
         [HttpGet]
         public async Task<ActionResult> GetToDoItemsByIdAsync(Guid id)
@@ -37,6 +35,5 @@ namespace PD.Workademy.ToDo.Web.Controllers
         {
             return Ok(_toDoItemService.DeleteToDoItem(id));
         }
-
     }
 }

@@ -5,12 +5,9 @@ using PD.Workademy.ToDo.Web.ApiModels;
 
 namespace PD.Workademy.ToDo.Web.Controllers
 {
-
     public class CategoryController : ApiBaseController
     {
-
         private readonly ICategoryService _categoryService;
-
         public CategoryController(ICategoryService categoryService)
         {
             _categoryService = categoryService;
@@ -40,6 +37,5 @@ namespace PD.Workademy.ToDo.Web.Controllers
         {
             return Ok(_categoryService.DeleteCategory(id));
         }
-
     }
 }

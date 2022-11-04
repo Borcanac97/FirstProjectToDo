@@ -12,8 +12,6 @@ namespace PD.Workademy.ToDo.Web.Controllers
             _userService = userService;
         }
 
-
-
         [HttpGet]
         public async Task<ActionResult> GetUserByIdAsync(Guid id)
         {
@@ -26,7 +24,6 @@ namespace PD.Workademy.ToDo.Web.Controllers
             return Ok(_userService.AddUser(user));
         }
 
-
         [HttpPut]
         public async Task<ActionResult> UpdateUserAsync(UserDTO updateUser)
         {
@@ -38,7 +35,5 @@ namespace PD.Workademy.ToDo.Web.Controllers
         {
             return Ok(_userService.DeleteUser(id));
         }
-
-
     }
 }

@@ -17,6 +17,5 @@ namespace PD.Workademy.ToDo.Domain.Entities
             FirstName = firstName;
             LastName = lastName;
         }
-
     }
 }

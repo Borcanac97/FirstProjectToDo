@@ -4,7 +4,6 @@ using PD.Workademy.ToDo.Web.ApiModels;
 
 namespace PD.Workademy.ToDo.Web.Controllers
 {
-
     public class UsersController : ApiBaseController
     {
         private readonly IUserService _userService;
@@ -18,7 +17,5 @@ namespace PD.Workademy.ToDo.Web.Controllers
         {
             return Ok(_userService.GetUsers());
         }
-
-
     }
 }

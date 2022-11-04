@@ -39,9 +39,9 @@ namespace PD.Workademy.ToDo.Infrastructure.Persistance.Repositories
             return _dbContext.Users;
         }
 
-        public User UpdateUser(Guid id, User user)
+        public User UpdateUser(User user)
         {
-            var userUpdate = _dbContext.Users.FirstOrDefault(x => x.Id == id);
+            var userUpdate = _dbContext.Users.FirstOrDefault(x => x.Id == user.Id);
             userUpdate.Id = user.Id;
             userUpdate.FirstName = user.FirstName;
             userUpdate.LastName = user.LastName;

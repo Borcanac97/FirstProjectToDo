@@ -9,7 +9,7 @@ namespace PD.Workademy.ToDo.Application.IServices
 
         CategoryDTO GetCategoryById(Guid id);
 
-        CategoryDTO UpdateCategory(Guid id, CategoryDTO category);
+        CategoryDTO UpdateCategory(CategoryDTO category);
 
         CategoryDTO DeleteCategory(Guid id);
 

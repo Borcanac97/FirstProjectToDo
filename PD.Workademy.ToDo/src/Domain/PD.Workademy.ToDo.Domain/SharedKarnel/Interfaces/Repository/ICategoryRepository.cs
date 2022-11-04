@@ -9,7 +9,7 @@ namespace PD.Workademy.ToDo.Domain.SharedKarnel.Interfaces.Repository
 
         Category GetCategoryById(Guid id);
 
-        Category UpdateCategory(Guid id, Category category);
+        Category UpdateCategory(Category category);
 
         Category DeleteCategory(Guid id);
 

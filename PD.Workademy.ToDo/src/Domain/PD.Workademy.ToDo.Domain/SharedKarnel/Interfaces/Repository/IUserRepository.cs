@@ -8,7 +8,7 @@ namespace PD.Workademy.ToDo.Domain.SharedKarnel.Interfaces.Repository
 
         User GetUserById(Guid id);
 
-        User UpdateUser(Guid id, User user);
+        User UpdateUser(User user);
 
         User DeleteUser(Guid id);
 

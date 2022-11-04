@@ -9,7 +9,7 @@ namespace PD.Workademy.ToDo.Application.IServices
 
         UserDTO GetUserById(Guid id);
 
-        UserDTO UpdateUser(Guid id, UserDTO user);
+        UserDTO UpdateUser(UserDTO user);
 
         UserDTO DeleteUser(Guid id);
 

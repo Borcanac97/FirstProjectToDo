@@ -44,10 +44,10 @@ namespace PD.Workademy.ToDo.Application.Services
             return user.Select(x => new UserDTO(x.Id, x.FirstName, x.LastName));
         }
 
-        public UserDTO UpdateUser(Guid id, UserDTO userDTO)
+        public UserDTO UpdateUser(UserDTO userDTO)
         {
             User userUpdate = new(userDTO.Id, userDTO.FirstName, userDTO.LastName);
-            _userRepository.UpdateUser(id, userUpdate);
+            _userRepository.UpdateUser(userUpdate);
             UserDTO user = new(userDTO.Id, userDTO.FirstName, userDTO.LastName);
             return user;
         }

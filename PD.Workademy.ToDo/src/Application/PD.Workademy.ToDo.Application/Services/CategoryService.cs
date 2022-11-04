@@ -49,10 +49,10 @@ namespace PD.Workademy.ToDo.Application.Services
             return categoryDTO;
         }
 
-        public CategoryDTO UpdateCategory(Guid id, CategoryDTO category)
+        public CategoryDTO UpdateCategory(CategoryDTO category)
         {
             Category categoryUpdate = new(category.Id, category.Name);
-            _categoryRepository.UpdateCategory(id, categoryUpdate);
+            _categoryRepository.UpdateCategory(categoryUpdate);
             CategoryDTO categoryDTO = new(category.Id, category.Name);
             return categoryDTO;
         }

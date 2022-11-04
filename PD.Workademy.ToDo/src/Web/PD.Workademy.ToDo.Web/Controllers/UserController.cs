@@ -28,9 +28,9 @@ namespace PD.Workademy.ToDo.Web.Controllers
 
 
         [HttpPut]
-        public async Task<ActionResult> UpdateUserAsync(Guid id, UserDTO updateUser)
+        public async Task<ActionResult> UpdateUserAsync(UserDTO updateUser)
         {
-            return Ok(_userService.UpdateUser(id, updateUser));
+            return Ok(_userService.UpdateUser(updateUser));
         }
 
         [HttpDelete]

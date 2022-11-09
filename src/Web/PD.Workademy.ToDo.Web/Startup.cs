@@ -20,17 +20,7 @@ namespace PD.Workademy.ToDo.Web
             service.AddEndpointsApiExplorer();
             service.AddSwaggerGen();
 
-            service.AddDbContext<ApplicationDBContext>(options =>
-            {
-                options.UseSqlServer(Configuration.GetConnectionString("Todo"));
-            });
-
-            service.AddTransient<ICategoryService, CategoryService>();
-            service.AddTransient<IUserService, UserService>();
-            service.AddTransient<IToDoItemService, ToDoItemService>();
-            service.AddTransient<ICategoryRepository, CategoryRepository>();
-            service.AddTransient<IUserRepository, UserRepository>();
-            service.AddTransient<IToDoItemRepository, ToDoItemRepository>();
+            
         }
         public void Configure(IApplicationBuilder application)
         {

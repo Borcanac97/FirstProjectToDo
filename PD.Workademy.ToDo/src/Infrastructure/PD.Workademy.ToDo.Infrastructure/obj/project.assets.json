@@ -2054,11 +2054,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ndjokic\\Desktop\\FIRST_PROJECT\\FirstProjectToDo\\PD.Workademy.ToDo\\src\\Infrastructure\\PD.Workademy.ToDo.Infrastructure\\PD.Workademy.ToDo.Infrastructure.csproj",
+      "projectUniqueName": "C:\\Users\\ndjokic\\Desktop\\WorkademyProject\\FIRST_PROJECT\\FirstProjectToDo\\PD.Workademy.ToDo\\src\\Infrastructure\\PD.Workademy.ToDo.Infrastructure\\PD.Workademy.ToDo.Infrastructure.csproj",
       "projectName": "PD.Workademy.ToDo.Infrastructure",
-      "projectPath": "C:\\Users\\ndjokic\\Desktop\\FIRST_PROJECT\\FirstProjectToDo\\PD.Workademy.ToDo\\src\\Infrastructure\\PD.Workademy.ToDo.Infrastructure\\PD.Workademy.ToDo.Infrastructure.csproj",
+      "projectPath": "C:\\Users\\ndjokic\\Desktop\\WorkademyProject\\FIRST_PROJECT\\FirstProjectToDo\\PD.Workademy.ToDo\\src\\Infrastructure\\PD.Workademy.ToDo.Infrastructure\\PD.Workademy.ToDo.Infrastructure.csproj",
       "packagesPath": "C:\\Users\\ndjokic\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\ndjokic\\Desktop\\FIRST_PROJECT\\FirstProjectToDo\\PD.Workademy.ToDo\\src\\Infrastructure\\PD.Workademy.ToDo.Infrastructure\\obj\\",
+      "outputPath": "C:\\Users\\ndjokic\\Desktop\\WorkademyProject\\FIRST_PROJECT\\FirstProjectToDo\\PD.Workademy.ToDo\\src\\Infrastructure\\PD.Workademy.ToDo.Infrastructure\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -2080,8 +2080,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\ndjokic\\Desktop\\FIRST_PROJECT\\FirstProjectToDo\\PD.Workademy.ToDo\\src\\Application\\PD.Workademy.ToDo.Application\\PD.Workademy.ToDo.Application.csproj": {
-              "projectPath": "C:\\Users\\ndjokic\\Desktop\\FIRST_PROJECT\\FirstProjectToDo\\PD.Workademy.ToDo\\src\\Application\\PD.Workademy.ToDo.Application\\PD.Workademy.ToDo.Application.csproj"
+            "C:\\Users\\ndjokic\\Desktop\\WorkademyProject\\FIRST_PROJECT\\FirstProjectToDo\\PD.Workademy.ToDo\\src\\Application\\PD.Workademy.ToDo.Application\\PD.Workademy.ToDo.Application.csproj": {
+              "projectPath": "C:\\Users\\ndjokic\\Desktop\\WorkademyProject\\FIRST_PROJECT\\FirstProjectToDo\\PD.Workademy.ToDo\\src\\Application\\PD.Workademy.ToDo.Application\\PD.Workademy.ToDo.Application.csproj"
             }
           }
         }

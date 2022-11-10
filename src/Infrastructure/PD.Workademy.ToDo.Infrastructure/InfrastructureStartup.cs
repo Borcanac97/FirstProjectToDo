@@ -13,7 +13,7 @@ namespace PD.Workademy.ToDo.Infrastructure
         {
             Configuration = configurationRoot;
         }
-        public IConfigurationRoot Configuration { get; }
+        public IConfigurationRoot Configuration { get; } 
         public void ConfigureService(IServiceCollection services)
         {
             services.AddTransient<ICategoryRepository, CategoryRepository>();

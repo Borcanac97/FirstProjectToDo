@@ -1,4 +1,5 @@
-﻿using PD.Workademy.ToDo.Application.IServices;
+﻿using PD.Workademy.ToDo.Application.DTOModels;
+using PD.Workademy.ToDo.Application.IServices;
 using PD.Workademy.ToDo.Domain.Entities;
 using PD.Workademy.ToDo.Domain.SharedKarnel.Interfaces.Repository;
 using PD.Workademy.ToDo.Web.ApiModels;
@@ -63,6 +64,29 @@ namespace PD.Workademy.ToDo.Application.Services
                                   new CategoryDTO(toDoItem.Category.Id, toDoItem.Category.Name),
                                   new UserDTO(toDoItem.User.Id, toDoItem.User.FirstName, toDoItem.User.LastName));
             return toDoDTO;
+        }
+        public IEnumerable<ToDoItemDTO> GetToDoByFilter(FilterDTO _filterDTO)
+        {
+            int page = _filterDTO.Page == null || _filterDTO.Page == 0 ? 1 : _filterDTO.Page;
+            int perPage = _filterDTO.PerPage == null || _filterDTO.PerPage == 0 ? 10 : _filterDTO.PerPage;
+            string sortBy = _filterDTO.SortBy ?? "Id";
+            string search = _filterDTO.Search ?? "";
+            
+            ToDoItemDTO toDoItemDTO = new();
+
+            var toDoItem = _toDoItemRepository.GetToDoByFilter(search, sortBy, page, perPage);
+
+            IEnumerable<ToDoItemDTO> toDoItemDTOs = toDoItem.Select(
+                x => new ToDoItemDTO(
+                        x.Id,
+                        x.Title,
+                        x.Description,
+                        x.IsDone,
+                        new CategoryDTO(x.Category.Id, x.Category.Name),
+                        new UserDTO(x.User.Id, x.User.FirstName, x.User.LastName)
+                        )
+                );
+            return toDoItemDTOs;
         }
     }
 }

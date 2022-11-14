@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using PD.Workademy.ToDo.Application.DTOModels;
 using PD.Workademy.ToDo.Application.IServices;
 using PD.Workademy.ToDo.Web.ApiModels;
 
@@ -34,6 +35,12 @@ namespace PD.Workademy.ToDo.Web.Controllers
         public async Task<ActionResult> RemoveToDoItemsAsync(Guid id)
         {
             return Ok(_toDoItemService.DeleteToDoItem(id));
+        }
+        [HttpGet("FILTERS")]
+        public async Task<ActionResult> GetToDoByFilters([FromQuery] FilterDTO filter)
+        {
+
+            return Ok(_toDoItemService.GetToDoByFilter(filter));
         }
     }
 }

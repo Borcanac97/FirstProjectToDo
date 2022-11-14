@@ -4,7 +4,9 @@ namespace PD.Workademy.ToDo.Domain.SharedKarnel.Interfaces.Repository
 {
     public interface IToDoItemRepository
     {
+
         IEnumerable<ToDoItem> GetToDoItems();
+        IEnumerable<ToDoItem> GetToDoByFilter(string search, string sortBy, int page, int perPage);
 
         ToDoItem GetToDoItemById(Guid id);
 

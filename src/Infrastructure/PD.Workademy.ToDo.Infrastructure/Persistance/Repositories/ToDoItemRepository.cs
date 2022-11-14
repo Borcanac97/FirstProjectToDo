@@ -53,5 +53,24 @@ namespace PD.Workademy.ToDo.Infrastructure.Persistance.Repositories
             _dbContext.SaveChanges();
             return toDoItemUpdate;
         }
+
+        public IEnumerable<ToDoItem> GetToDoByFilter(string search, string sortBy, int page, int perPage)
+        {
+            var toDoItems = _dbContext.ToDoItems.
+                Include(x => x.Category)
+                .Include(x => x.User)
+                .Where(x => x.Title.Contains(search)
+                         || x.Description.Contains(search)
+                         || x.Category.Name.Contains(search)
+                         || x.User.FirstName.Contains(search)
+                         || x.User.LastName.Contains(search)
+                         )
+                .OrderBy(x => x[sortBy])
+                .Skip((page - 1) * perPage)
+                .Take(perPage)
+                .ToList();
+
+            return toDoItems;
+        }
     }
 }

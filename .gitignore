@@ -458,5 +458,11 @@ $RECYCLE.BIN/
 */Debug/
 */Release/
 .vs/*
-
+.vs/
+.vs
+*.vs
+/.vs/*
+/.vs/
+/.vs
+*/.vs
 .vs/pd-workademy-todos/v17/.suo

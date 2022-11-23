@@ -12,35 +12,25 @@ namespace PD.Workademy.ToDo.Web.Controllers
         {
             _toDoItemService = toDoItemService;
         }
-
         [HttpGet]
         public async Task<ActionResult> GetToDoItemsByIdAsync(Guid id)
         {
             return Ok(_toDoItemService.GetToDoItemById(id));
         }
-
         [HttpPost]
-        public async Task<ActionResult> AddToDoItemAsync([FromBody] ToDoItemDTO addToDoItemDTO)
+        public async Task<ActionResult> AddToDoItemAsync([FromBody] AddToDoDTO addToDoItemDTO)
         {
             return Ok(_toDoItemService.AddToDoItem(addToDoItemDTO));
         }
-
         [HttpPut]
-        public async Task<ActionResult> UpdateToDoItemAsync(ToDoItemDTO updateToDoItem)
+        public async Task<ActionResult> UpdateToDoItemAsync(UpdateToDoDTO updateToDoItem)
         {
             return Ok(_toDoItemService.UpdateToDoItem(updateToDoItem));
         }
-
         [HttpDelete]
         public async Task<ActionResult> RemoveToDoItemsAsync(Guid id)
         {
             return Ok(_toDoItemService.DeleteToDoItem(id));
-        }
-        [HttpGet("FILTERS")]
-        public async Task<ActionResult> GetToDoByFilters([FromQuery] FilterDTO filter)
-        {
-
-            return Ok(_toDoItemService.GetToDoByFilter(filter));
         }
     }
 }

@@ -1,10 +1,16 @@
 using PD.Workademy.ToDo.Application;
 using PD.Workademy.ToDo.Infrastructure;
 using PD.Workademy.ToDo.Web;
-
-
+using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
+
+
+builder.Host.UseSerilog((context, config) =>
+{
+    config.ReadFrom.Configuration(context.Configuration);
+});
+
 
 var startup = new Startup(builder.Configuration);
 var applicationStartup = new ApplicationStartup(builder.Configuration);
@@ -20,15 +26,10 @@ startup.Configure(app);
 
 
 // Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
-{
-    app.UseSwagger();
-    app.UseSwaggerUI();
-}
+app.UseSwagger();
+app.UseSwaggerUI();
 
 app.UseResponseCaching();
-
-app.UseHttpsRedirection();
 
 app.UseAuthorization();
 

@@ -1,0 +1,10 @@
+version: "3.9"
+services:
+  todo:
+    image: "todo:latest"
+    ports:
+      - "8000:80"
+  mongo:
+    image: "mongo:latest"
+    ports:
+      - "8007:27017"
